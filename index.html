@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#5b5ce2">
+  <title>Hệ thống trắc nghiệm học tập</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="shell">
+    <a class="brand-wrap" href="index.html">
+      <span class="logo-mark">✓</span>
+      <span class="brand">HỆ THỐNG TRẮC NGHIỆM<small>Kho bài kiểm tra theo môn học & chương</small></span>
+    </a>
+    <div class="top-actions"><span class="pill live">Đang hoạt động</span></div>
+  </div>
+</header>
+<main class="shell">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Học tập có hệ thống</div>
+      <h1>Ôn tập gọn hơn.<br><span>Kiểm tra rõ hơn.</span></h1>
+      <p>Chọn môn học và chương để bắt đầu. Bài làm được lưu theo họ tên và lớp; sau khi nộp mới hiển thị điểm, đáp án, giải thích và nội dung kiến thức tương ứng.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="quiz.html?chapter=chuong-4">▶ Làm Chương 4</a>
+        <a class="btn secondary" href="#subjects">Xem môn học ↓</a>
+      </div>
+    </div>
+    <div class="hero-art"><img src="hero-quiz.svg" alt="Minh họa học tập và làm bài trắc nghiệm"></div>
+  </section>
+
+  <section class="stats" aria-label="Thông tin hệ thống">
+    <div class="stat"><strong>01 môn</strong><span>Đang triển khai</span></div>
+    <div class="stat"><strong>04 chương</strong><span>Khung học tập hiện tại</span></div>
+    <div class="stat"><strong>40 câu</strong><span>Mỗi đề hoàn chỉnh</span></div>
+    <div class="stat"><strong>Tự động lưu</strong><span>Tiến độ và kết quả</span></div>
+  </section>
+
+  <section id="subjects">
+    <div class="section-head"><div><h2>Môn học</h2><p>Chọn môn, sau đó chọn chương cần ôn tập hoặc kiểm tra.</p></div></div>
+    <article class="subject-card">
+      <div class="subject-cover">
+        <div class="subject-copy">
+          <div class="subject-icon">📘</div>
+          <div><h3>Quản trị học</h3><p>Hệ thống câu hỏi theo từng chương, có lưu lịch sử làm bài và xem lại chi tiết sau khi nộp.</p></div>
+        </div>
+        <img src="management-illustration.svg" alt="Minh họa môn Quản trị học">
+      </div>
+      <div class="chapter-wrap">
+        <div class="chapter-grid">
+          <div class="chapter-card locked"><div class="chapter-num">1</div><div class="chapter-info"><h4>Chương 1</h4><p>Đang chờ đưa dữ liệu câu hỏi vào hệ thống.</p><div class="chapter-meta"><span class="tag">Sắp có</span></div></div></div>
+          <div class="chapter-card locked"><div class="chapter-num">2</div><div class="chapter-info"><h4>Chương 2</h4><p>Đang chờ đưa dữ liệu câu hỏi vào hệ thống.</p><div class="chapter-meta"><span class="tag">Sắp có</span></div></div></div>
+          <div class="chapter-card locked"><div class="chapter-num">3</div><div class="chapter-info"><h4>Chương 3</h4><p>Đang chờ đưa dữ liệu câu hỏi vào hệ thống.</p><div class="chapter-meta"><span class="tag">Sắp có</span></div></div></div>
+          <a class="chapter-card active" href="quiz.html?chapter=chuong-4"><div class="chapter-num">4</div><div class="chapter-info"><h4>Văn hóa với quản trị của tổ chức</h4><p>Đề 40 câu đầy đủ. Chỉ hiện đáp án, giải thích và nội dung thuộc sau khi nộp bài.</p><div class="chapter-meta"><span class="tag">40 câu</span><span class="tag">Đã sẵn sàng</span><span class="tag">Có lưu kết quả</span></div></div></a>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+<footer class="footer"><div class="shell footer-inner"><span>Hệ thống trắc nghiệm học tập · Phiên bản nền tảng</span><span>Có thể mở rộng thêm chương và môn học sau này.</span></div></footer>
+</body>
+</html>
