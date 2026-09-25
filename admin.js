@@ -1,7 +1,0 @@
-
-const cfg=window.APP_CONFIG||{},msg=document.querySelector('#msg');
-if(!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY){msg.textContent='Chưa cấu hình Supabase trong config.js.'}
-const sb=(cfg.SUPABASE_URL&&cfg.SUPABASE_ANON_KEY)?window.supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY):null;
-async function loadRows(){const r=await sb.rpc('admin_attempts');if(r.error){msg.textContent=r.error.message;return}document.querySelector('#rows').innerHTML=(r.data||[]).map(x=>`<tr><td>${x.full_name}</td><td>${x.class_name}</td><td>${x.chapter_title}</td><td>${x.attempt_number}</td><td>${x.score}/${x.total_questions}</td><td>${x.percent}%</td><td>${x.monitoring_required?(x.monitor_event_count+' sự kiện'):'Không'}</td><td>${x.submitted_at?new Date(x.submitted_at).toLocaleString('vi-VN'):''}</td></tr>`).join('')}
-async function showIfAuth(){if(!sb)return;const {data}=await sb.auth.getSession();if(data.session){document.querySelector('#loginBox').classList.add('hidden');document.querySelector('#dash').classList.remove('hidden');loadRows()}}
-document.querySelector('#login').onclick=async()=>{msg.textContent='';const r=await sb.auth.signInWithPassword({email:document.querySelector('#email').value.trim(),password:document.querySelector('#password').value});if(r.error){msg.textContent=r.error.message;return}document.querySelector('#loginBox').classList.add('hidden');document.querySelector('#dash').classList.remove('hidden');loadRows()};document.querySelector('#logout').onclick=async()=>{await sb.auth.signOut();location.reload()};showIfAuth();
